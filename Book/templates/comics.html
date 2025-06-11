@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card-group">
+    {% for comic in comics %}
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{comic.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{comic.title.capitalize}}</h5>
+            <p class="card-text">{{comic.subtitle}}</p>
+            <p class="card-text">By : {{comic.author.name.capitalize}}</p>
+            <a href="" class="btn btn-primary">Read</a>
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

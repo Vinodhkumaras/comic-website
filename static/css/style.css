@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    header {
+        height: 40px;
+    }
+
+    main {
+        margin-top: 40px;
+        width: 100%;
+        .container {
+            .card-group{
+                display: grid;
+                grid-template-columns: auto auto auto;
+
+
+                .card {
+                    width: 200px;
+                    height: 350px;
+                    display: flex;
+                    flex-direction: column;
+                    img {
+                        height: 50%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}

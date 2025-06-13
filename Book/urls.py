@@ -3,5 +3,8 @@ from . import views
 
 urlpatterns = [
 
-    path('', views.ComicList.as_view(), name = 'home')
+    path('', views.ComicList.as_view(), name = 'home'),
+    path('comic/<int:pk>', views.ComicDetails.as_view(), name='comic_details'),
+    path('comic/edit/<int:pk>', views.EditComic.as_view(), name = 'edit_comic'),
+    path('comic/del/<int:pk>', views.DeleteComic.as_view(), name = 'del_comic')
 ]

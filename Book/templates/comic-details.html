@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ Comic.name }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <img src="{{comic.image.url}}" alt="Image of {{comic.name}}" class="w-100 round-edge"> 
+        </div>
+
+        <div class="col">
+            <h4>
+                {{comic.title}}  
+            </h4>
+             <p>
+               Subtitle :-- {{comic.subtitle.capitalize }}
+                <br>
+                Author :-- {{comic.author}}
+            </p> 
+            <div class="w-100 mx-2 my-5 row justify-content-evenly">
+
+                <!-- {% if user.is_staff %} -->
+                 <a href="{% url 'del_comic' comic.id %}" class="btn btn-primary col-3">Add To Cart</a>
+                <a href="{% url 'edit_comic' comic.id %}" class="btn btn-secondary col-3">Edit Comic</a>
+                <a href="{% url 'del_comic' comic.id %}" class="btn btn-danger col-3">Delete Comic</a>
+                <!-- {% else %} -->
+                
+                <!-- {% endif %} -->
+                
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

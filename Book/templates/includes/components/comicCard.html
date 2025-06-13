@@ -1,0 +1,26 @@
+{% load static %}
+<div class="card">
+    <div class="card-img">
+        {% if Comic.image %}
+        <img src="{{ comic.image.url }}" alt="{{comic.name}}'s picture">
+        {% else %}
+        <img src="{% static 'images/placeholders/no-image.jpg' %}" alt="">
+        {% endif %}
+    </div>
+
+    <div class="card-body">
+        <div class="card-title">
+            <h5>
+                <a href="{% url 'comic_detail' comic.id %}">
+                {{ Comic.name }}
+                </a>
+            </h5>
+        </div>
+        <p class="card-text">
+            &#8377; {{ Comic.price }}
+        </p>    
+        <a href="{% url 'add_to_cart' comic.id %}" class="btn btn-primary">
+            Add to Cart
+        </a>
+    </div>
+</div>

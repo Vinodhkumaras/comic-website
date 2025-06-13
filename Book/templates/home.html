@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid comic-container">
+    {% for Comic in comics %}
+        <!-- Product Card -->
+         {% include 'includes/components/comicCard.html' %}
+
+    {% endfor %}
+</div>
+{% endblock %}

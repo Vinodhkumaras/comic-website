@@ -27,8 +27,14 @@ body {
                         height: 50%;
                         object-fit: cover;
                     }
+                    footer{
+                        height: auto;
+                        width: 100%;
+                        text-align: center;
+                    }
                 }
             }
         }
     }
 }
+

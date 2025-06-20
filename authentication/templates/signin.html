@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}
+Sign In
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+
+    <form method="post" class="w-20 d-flex justify-content-center ">
+        {% csrf_token %}
+        <div class="border py-3 px-3 round-edge">
+        {{ form.as_p}}
+        <button type="submit" class="btn btn-primary w-100">Sign In</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Delete comic : {{Comic.name}}
+Delete comic : {{comic.name}}
 {% endblock %}
 
 
@@ -32,13 +32,9 @@ Delete comic : {{Comic.name}}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-primary w-100">Delete Comic</button>
                 </form>
-                <a href="{% url 'comic_detail' comic.id %}" class="btn btn-warning col-6">Cancel</a>
-
+                <a href="{% url 'comic_' comic.id %}" class="btn btn-warning col-6">Cancel</a>
                 </div>
-                
-
             </div>
-
         </div>
     </div>
     {% endblock %}

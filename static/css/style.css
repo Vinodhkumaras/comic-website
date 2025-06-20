@@ -5,36 +5,76 @@
 }
 
 body {
-    header {
-        height: 40px;
-    }
-
-    main {
-        margin-top: 40px;
-        width: 100%;
-        .container {
-            .card-group{
-                display: grid;
-                grid-template-columns: auto auto auto;
+    height: 40px;
+    
+    /* background: image 100px; */
 
 
+main {
+    margin-top: 40px;
+    width: 100%;
+
+    .comic-container {
+        display: grid;
+        grid-template-columns:  auto auto auto auto;
                 .card {
-                    width: 200px;
+                    margin: auto;
+                    margin-top: 20px ;
                     height: 350px;
-                    display: flex;
-                    flex-direction: column;
-                    img {
-                        height: 50%;
-                        object-fit: cover;
-                    }
-                    footer{
-                        height: auto;
-                        width: 100%;
-                        text-align: center;
+                    width: 250px;
+                    .card-img {
+                        height: 80%;
+                        overflow: hidden;
+
+                        img {
+                            object-position: 0px 0px;
+                            height: 100%;
+                            object-fit: cover;
+                            overflow: hidden;
+                        }
                     }
                 }
             }
         }
+
+
+    .container {
+        .card-group {
+            display: grid;
+            gap: 50px;
+            grid-template-columns: 0px 0px auto;
+
+
+            .signin-container,
+            .signin-container {
+                max-width: 500px;
+                margin: 150px auto;
+                padding: 30px;
+                border: 1px solid #4b3838;
+                border-radius: 10px;
+                box-shadow: 0 0 15px rgb(236, 129, 129);
+                background-color: hsl(0, 0%, 100%);
+            }
+
+            .Register-container {
+                max-width: 500px;
+                margin: 150px;
+                padding: 20px;
+                border: 2px solid rgb(241, 234, 234);
+                box-shadow: 0 0 15px black(234, 234, 231);
+                background-color: aqua(0 0% 100%);
+            }
+
+
+            footer {
+                height: auto;
+                width: 100%;
+                text-align: center;
+            }
+
+
+
+            
     }
 }
-
+}

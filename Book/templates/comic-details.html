@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-{{ Comic.name }}
+{{ comic.name }}
 {% endblock %}
 
 
@@ -15,22 +15,30 @@
 
         <div class="col">
             <h4>
-                {{comic.title}}  
+                {{comic.name}}  
             </h4>
+            <!-- <p>
+                &#8377; {{ comic.price}}
+            </p> -->
              <p>
-               Subtitle :-- {{comic.subtitle.capitalize }}
+               Subtitle -  {{comic.subtitle.capitalize }}
                 <br>
-                Author :-- {{comic.author}}
+                Author - {{comic.author}}
+                <br>
             </p> 
+            {% if comic.desc %}
+            <div class="text-secondary">
+                {{comic.desc}}
+            </div>
             <div class="w-100 mx-2 my-5 row justify-content-evenly">
-
-                <!-- {% if user.is_staff %} -->
-                 <a href="{% url 'del_comic' comic.id %}" class="btn btn-primary col-3">Add To Cart</a>
+                {% endif %}
+                {% if user.is_staff %}
+                 
                 <a href="{% url 'edit_comic' comic.id %}" class="btn btn-secondary col-3">Edit Comic</a>
                 <a href="{% url 'del_comic' comic.id %}" class="btn btn-danger col-3">Delete Comic</a>
-                <!-- {% else %} -->
-                
-                <!-- {% endif %} -->
+                {% else %}
+                <a href="" class="btn btn-primary col-3">Add book</a>
+                {% endif %}
                 
             </div>
             

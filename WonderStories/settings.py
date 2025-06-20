@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Book',
+    'authentication',
+    'cart',
+    'payment',
+    'orders'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +134,21 @@ MEDIA_URL = '/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Athentication of the login page
+LOGIN_URL ='signin'
+LOGIN_REDIRECT_URL ='/'
+LOGOUT_REDIRECT_URL ='/'
+
+# Razorpay configs
+
+RAZORPAY_KEY_ID = "rzp_test_o62owurdTsB6td"  # Replace with your Key ID
+RAZORPAY_KEY_SECRET = "aOsKdQyMq9OE63ekEMJ2oGgw"
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://api.razorpay.com',  # Add Razorpay's domain
+]
+TIME_ZONE = 'Asia/Kolkata'  # Change to your local time zone
+USE_TZ = True

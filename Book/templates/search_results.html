@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ comic | Search results for {{query}}
+{% endblock %}
+
+{% block content %}
+
+<span>Search results for : {{query}}</span>
+
+<div class="container-fluid comic-container">
+    {% for comic in comics %}
+        <!-- Comic Card -->
+         {% include 'includes/components/comicCard.html' %}
+
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ comic.name }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <img src="{{comic.image.url}}" alt="Image of {{comic.name}}" class="w-100 round-edge"> 
+        </div>
+
+        <div class="col">
+            <h4>
+                {{comic.name}}  
+            </h4>
+            <!-- <p>
+                &#8377; {{ comic.price}}
+            </p> -->
+             <p>
+               Subtitle -  {{comic.subtitle.capitalize }}
+                <br>
+                Author - {{comic.author}}
+                <br>
+            </p> 
+            {% if comic.desc %}
+            <div class="text-secondary">
+                {{comic.desc}}
+            </div>
+                {% endif %}
+               
+                
+            </div>
+            <div>
+                <a href="{{comic.file.url}}">Read Comic</a>
+            </div>
+            <div>
+                
+    <embed src="{{ comic.file.url }}" type="application/pdf" width="100%" height="600px" />
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

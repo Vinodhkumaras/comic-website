@@ -2,21 +2,22 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    /* background-image: url("WonderStories\media\comic\social1.jpg"); */
 }
 
 body {
     height: 40px;
-    
-    /* background: image 100px; */
+    background-color: aliceblue;
+    background-image: url("WonderStories\media\comic\social1.jpg");
 
 
 main {
     margin-top: 40px;
-    width: 100%;
+    width: 100%;                    
 
     .comic-container {
         display: grid;
-        grid-template-columns:  auto auto auto auto;
+        grid-template-columns:  auto auto auto;
                 .card {
                     margin: auto;
                     margin-top: 20px ;
@@ -27,7 +28,7 @@ main {
                         overflow: hidden;
 
                         img {
-                            object-position: 0px 0px;
+                            object-position: 0px 0px 0px;
                             height: 100%;
                             object-fit: cover;
                             overflow: hidden;

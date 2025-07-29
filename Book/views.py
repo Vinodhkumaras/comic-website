@@ -6,7 +6,7 @@ from django.http import JsonResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 
 from .models import Comic
-
+from orders.models import Order, OrderDetails
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 # CRUD operations of Comic model
@@ -36,7 +36,7 @@ class ComicDetails(DetailView):
     model = Comic
     template_name = 'comic-details.html'
     context_object_name = 'comic'
-    succus_url='/'
+    success_url = '/'
 
 # 3. Update view (Update statement)
 class EditComic(LoginRequiredMixin, UpdateView):
@@ -79,3 +79,33 @@ def searchView(request):
 
     template = loader.get_template('search_results.html')
     return HttpResponse(template,render(context,request))
+
+
+def myBooks(request):
+    orders = Order.objects.filter(user = request.user)
+    ordered_books = []
+    order_items = []
+    for order in orders:
+        order_items.extend(list(OrderDetails.objects.filter(order = order)))
+    for item in order_items:
+        ordered_books.append(item.order_item)
+
+    context = {
+        'comics' : ordered_books
+    }
+    template = 'mybooks.html'
+    return render(request, template, context) 
+        
+
+from django.views.decorators.clickjacking import xframe_options_exempt
+
+@xframe_options_exempt
+def readBook(request, id):
+
+    comic = Comic.objects.get(id = id)
+
+    context = {
+        'comic' : comic
+    }
+    template = 'read_comic.html'
+    return render(request, template, context) 
